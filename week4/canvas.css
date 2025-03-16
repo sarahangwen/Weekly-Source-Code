@@ -1,0 +1,14 @@
+
+/* styles.css */
+canvas {
+    border: 3px solid black;  /* Adds a black border */
+    background-color: lightgray; /* Adds a background color */
+    display: block; /* Prevents extra space below canvas */
+    margin: 20px auto; /* Centers the canvas */
+    width: 500px; /* Sets width */
+    height: 300px; /* Sets height */
+    border-radius: 10px; /* Makes rounded corners */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Adds shadow */
+}
+
+
