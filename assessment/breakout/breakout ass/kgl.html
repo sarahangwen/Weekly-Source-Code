@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KGL Store Stock Management</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+<body>
+    <h1>KGL Store Stock Management</h1>
+    
+    <ul>
+        <li>Beans: <span id="beans-stock">100</span> kg</li>
+        <li>Maize: <span id="maize-stock">150</span> kg</li>
+        <li>Cow Peas: <span id="cowpeas-stock">80</span> kg</li>
+    </ul>
+    
+    <label for="produce">Choose produce:</label>
+    <select id="produce">
+        <option value="beans">Beans</option>
+        <option value="maize">Maize</option>
+        <option value="cowpeas">Cow Peas</option>
+    </select>
+    
+    <input type="number" id="stock-input" placeholder="Enter new stock value">
+    <button onclick="updateStock()">Update Stock</button>
+
+    <script>
+        function updateStock() {
+            let produce = document.getElementById("produce").value;
+            let newStock = document.getElementById("stock-input").value;
+            
+            if (newStock !== "" && newStock >= 0) {
+                document.getElementById(produce + "-stock").textContent = newStock;
+            } else {
+                alert("Please enter a valid stock value.");
+            }
+        }
+    </script>
+</body>
+</html>

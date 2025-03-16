@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paragraph Selection</title>
+</head>
+<body>
+    <p id="para1" class="text">This is the first Paragraph.</p>
+    <p id="para2" class="text">This is the second Paragraph.</p>
+    <p id="para3" class="text">This is the third Paragraph.</p>
+    <p id="para4" class="text">This the forth paragraph.</p>
+
+    <script>
+        // 1. Get the first paragraph using document.querySelector(tagname)
+        let firstPara = document.querySelector('p');
+        console.log("First paragraph (querySelector):", firstPara.textContent);
+
+        // Get the first paragraph by tag name
+        let firstParaByTag = document.getElementsByTagName('p')[0];
+        console.log("First paragraph (getElementsByTagName):", firstParaByTag.textContent);
+
+        // 2. Get each paragraph using document.querySelector('#id')
+        let para1 = document.querySelector('#para1');
+        let para2 = document.querySelector('#para2');
+        let para3 = document.querySelector('#para3');
+        let para4 = document.querySelector('#para4');
+        console.log("Paragraphs by ID:", para1.textContent, para2.textContent, para3.textContent, para4.textContent);
+
+        // 3. Get all the paragraphs as a NodeList
+        let allParas = document.querySelectorAll('p');
+        console.log("All paragraphs (querySelectorAll):", allParas);
+
+        // Get all paragraphs by tag name
+        let allParasByTag = document.getElementsByTagName('p');
+        console.log("All paragraphs (getElementsByTagName):", allParasByTag);
+
+        // 4. Loop through the NodeList and get the text content of each paragraph
+        allParas.forEach((para, index) => {
+            console.log(`Paragraph ${index + 1}:`, para.textContent);
+        });
+
+        // 5. Set a text content to the fourth paragraph
+        para4.textContent = "Fourth Paragraph";
+
+        // 6. Set id and class attributes using different methods
+        allParas[0].setAttribute("id", "firstPara");
+        allParas[1].id = "secondPara";
+        allParas[2].setAttribute("class", "updated-text");
+        allParas[3].className = "final-text";
+
+        // Change style of each paragraph
+        allParas.forEach(para => {
+            para.style.fontSize = "18px";
+            para.style.fontFamily = "Arial, sans-serif";
+            para.style.border = "1px solid black";
+            para.style.padding = "5px";
+            para.style.margin = "5px 0";
+        });
+
+        // Loop through all paragraphs and set colors
+        allParas.forEach((para, index) => {
+            if (index === 0 || index === 2) {
+                para.style.color = "green";
+            } else {
+                para.style.color = "red";
+            }
+        });
+
+        // Set text content, id, and class for each paragraph
+        allParas[0].textContent = "Updated First Paragraph";
+        allParas[1].textContent = "Updated Second Paragraph";
+        allParas[2].textContent = "Updated Third Paragraph";
+        allParas[3].textContent = "Updated Fourth Paragraph";
+
+        allParas[0].id = "updatedPara1";
+        allParas[1].id = "updatedPara2";
+        allParas[2].id = "updatedPara3";
+        allParas[3].id = "updatedPara4";
+
+        allParas[0].className = "styled-text first";
+        allParas[1].className = "styled-text second";
+        allParas[2].className = "styled-text third";
+        allParas[3].className = "styled-text fourth";
+    </script>
+</body>
+</html>
